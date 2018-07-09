@@ -13,6 +13,7 @@ is geodesic.
 
 -   `targetPoint` **[Coord][2]** the reference point
 -   `points` **[FeatureCollection][3]&lt;[Point][4]>** against input point set
+-   `options`(optional, could e.g. include `{ "units":"miles" }` )
 
 **Examples**
 
@@ -32,6 +33,11 @@ nearest.properties['marker-color'] = '#F00';
 ```
 
 Returns **[Feature][5]&lt;[Point][4]>** the closest point in the set to the reference point
+
+It conveniently adds two properties to the returned feature point:
+-   `featureIndex` index of the found point
+-   `distanceToPoint` distance between the target point and the found point in (default kilometers) the unit given
+
 
 [1]: https://tools.ietf.org/html/rfc7946#section-3.1.2
 
